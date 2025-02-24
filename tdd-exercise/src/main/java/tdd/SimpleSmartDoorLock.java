@@ -2,19 +2,22 @@ package tdd;
 
 public class SimpleSmartDoorLock implements SmartDoorLock {
     private int pin;
+    private boolean locked = false;
 
-    SimpleSmartDoorLock(int pin){
-        this.pin = pin;
-    }
 
     @Override
     public void setPin(int pin) {
-
+        //TODO add constraint after test is done
+        this.pin = pin;
+        this.locked = true;
     }
 
     @Override
     public void unlock(int pin) {
-
+        //TODO add more implementation after test is done
+        if (this.pin == pin) {
+            this.locked = false;
+        }
     }
 
     @Override
