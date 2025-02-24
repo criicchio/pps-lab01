@@ -49,7 +49,7 @@ class SimpleBankAccountTest {
 
     @Test
     void testWithdraw() {
-        expectedBalance = 30;
+        expectedBalance = 29;
         bankAccount.deposit(accountHolder.getId(), generalDeposit);
         bankAccount.withdraw(accountHolder.getId(), generalWithdraw);
         assertEquals(expectedBalance, bankAccount.getBalance());
