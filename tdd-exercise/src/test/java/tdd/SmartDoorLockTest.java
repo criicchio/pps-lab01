@@ -7,15 +7,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class SmartDoorLockTest {
     private SimpleSmartDoorLock smartDoorLock;
+    private int initialPin = 1234;
 
     @BeforeEach
     void beforeEach() {
-        int initialPin = 1234;
         smartDoorLock = new SimpleSmartDoorLock(initialPin);
     }
 
     @Test
-    public void todo() {
-        assertTrue(true);
+    public void testUnlockDoor() {
+        smartDoorLock.unlock(initialPin);
+        assertTrue(!smartDoorLock.isLocked());
     }
 }
