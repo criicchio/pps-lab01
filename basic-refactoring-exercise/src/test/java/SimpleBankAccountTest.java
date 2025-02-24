@@ -12,15 +12,15 @@ class SimpleBankAccountTest {
 
     private AccountHolder accountHolder;
     private BankAccount bankAccount;
-    private int expectedBalance;
+    private double expectedBalance;
     private final int wrongUserId = 2;
-    private final int generalDeposit = 100;
-    private final int generalWithdraw = 70;
+    private final double generalDeposit = 100;
+    private final double generalWithdraw = 70;
 
     @BeforeEach
     void beforeEach(){
-        int userId = 0;
-        int initialBalance = 0;
+        int userId = 1;
+        double initialBalance = 0;
         accountHolder = new AccountHolder("Mario", "Rossi", userId);
         bankAccount = new SimpleBankAccount(accountHolder, initialBalance);
     }
@@ -40,7 +40,7 @@ class SimpleBankAccountTest {
 
     @Test
     void testWrongDeposit() {
-        int deposit = 50;
+        double deposit = 50;
         expectedBalance = 100;
         bankAccount.deposit(accountHolder.getId(), generalDeposit);
         bankAccount.deposit(wrongUserId, deposit);
