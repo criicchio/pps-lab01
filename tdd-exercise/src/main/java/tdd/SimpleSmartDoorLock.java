@@ -1,6 +1,12 @@
 package tdd;
 
 public class SimpleSmartDoorLock implements SmartDoorLock {
+    private int pin;
+
+    SimpleSmartDoorLock(int pin){
+        this.pin = pin;
+    }
+
     @Override
     public void setPin(int pin) {
 
