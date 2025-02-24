@@ -11,12 +11,13 @@ public class SmartDoorLockTest {
 
     @BeforeEach
     void beforeEach() {
-        smartDoorLock = new SimpleSmartDoorLock(initialPin);
+        smartDoorLock = new SimpleSmartDoorLock();
+        smartDoorLock.setPin(initialPin);
     }
 
     @Test
     public void testUnlockDoor() {
         smartDoorLock.unlock(initialPin);
-        assertTrue(!smartDoorLock.isLocked());
+        assertFalse(smartDoorLock.isLocked());
     }
 }
